@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 
-function CompA() {
+function CompA({ myProp1, myProp2, myProp3, myProp4 }) {
  return (
   <>
    <h1>CompA</h1>
    <p>Hello Comp A</p>
+   <div>My Prop1: {myProp1}</div>
+   <div>My Prop2: {myProp2}</div>
+   <div>My Prop3: {myProp3}</div>
+   <div>My Prop4: {<myProp4 />}</div>
   </>
  );
 }
@@ -45,7 +49,12 @@ const Home = () => {
    Current Value: <h1>{myValue}</h1>
    <button onClick={() => setValue(myValue + 1)}>+</button>
    <button onClick={() => setValue(myValue - 1)}>-</button>
-   <CompC />
+   <CompA
+    myProp1={myValue}
+    myProp2='My Custom Value'
+    myProp3={true.toString()}
+    myProp4={() => <div>My NEW JSX!</div>}
+   />
   </>
  );
 };
