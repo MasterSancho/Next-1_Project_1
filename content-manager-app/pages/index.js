@@ -1,8 +1,18 @@
+const ArrowFunction = () => {
+ console.log('Console Log');
+ return (
+  <div>
+   <h1>I am arrow function</h1>
+  </div>
+ );
+};
+
 function CompA() {
  return (
   <>
    <h1>CompA</h1>
-   <p>Hello Comp A</p>
+   <ArrowFunction />
+   <CompB />
   </>
  );
 }
@@ -16,14 +26,13 @@ function CompB() {
  );
 }
 
-function Home() {
+const Home = () => {
  return (
   <>
    <h1>Hello World</h1>
    <CompA />
-   <CompB />
   </>
  );
-}
+};
 
 export default Home;
