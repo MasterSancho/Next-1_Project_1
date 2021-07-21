@@ -1,17 +1,9 @@
-const ArrowFunction = () => {
- console.log('Console Log');
- return (
-  <div>
-   <h1>I am arrow function</h1>
-  </div>
- );
-};
+import React, { useState } from 'react';
 
 function CompA() {
  return (
   <>
    <h1>CompA</h1>
-   <ArrowFunction />
    <CompB />
   </>
  );
@@ -27,8 +19,15 @@ function CompB() {
 }
 
 const Home = () => {
+ // [stateValue, mutateState]
+ const valueState = useState(10);
+ const [value, setValue] = useState(10);
+ // const value = valueState[0];
+ // const setValue = valueState[1];
+
  return (
   <>
+   valueState: {valueState[0]}
    <h1>Hello World</h1>
    <CompA />
   </>
