@@ -32,14 +32,16 @@ class CompC extends React.Component {
  }
 
  render() {
-  const myValue = this.state.myValue;
+  const { myValue } = this.state;
+  const { myProp1 } = this.props;
 
   return (
    <>
     <h1>Hello CompC</h1>
-    Current Value: <h1>{this.state.myValue}</h1>
+    Current Value: <h1>{myValue}</h1>
     <button onClick={() => this.changeState(myValue + 1)}>+</button>
     <button onClick={() => this.changeState(myValue - 1)}>-</button>
+    <h2>{this.props.myProp1}</h2>
    </>
   );
  }
@@ -62,12 +64,13 @@ const Home = () => {
    Other Value: <h1>{myOtherValue}</h1>
    <button onClick={() => setOtherValue(myOtherValue + 1)}>+</button>
    <button onClick={() => setOtherValue(myOtherValue - 1)}>-</button>
-   <CompA
+   {/* <CompA
     myProp1={myValue}
     myProp2='My Custom Value'
     myProp3={true.toString()}
     myProp4={() => <div>My NEW JSX!</div>}
-   />
+   /> */}
+   <CompC myProp1={myValue} />
   </>
  );
 };
