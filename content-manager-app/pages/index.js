@@ -21,16 +21,15 @@ function CompB() {
 const Home = () => {
  const [myValue, setValue] = useState(10);
 
- const incrementValue = () => {
-  setValue(myValue + 1);
-  console.log(myValue);
- };
+ // const changeValue = (incrementor) => {
+ //  setValue(myValue + incrementor);
+ // };
 
  return (
   <>
    Current Value: <h1>{myValue}</h1>
-   <button onClick={incrementValue}>+</button>
-   <button>-</button>
+   <button onClick={() => setValue(myValue + 1)}>+</button>
+   <button onClick={() => setValue(myValue - 1)}>-</button>
    <CompA />
   </>
  );
